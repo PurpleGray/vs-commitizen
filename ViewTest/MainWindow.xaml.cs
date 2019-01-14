@@ -19,6 +19,8 @@ namespace ViewTest
         public class DummyUserSettings : IUserSettings
         {
             public int MaxLineLength { get; set; } = 80;
+
+            public string ConfigFilePath { get; set; }
         }
     }
 }

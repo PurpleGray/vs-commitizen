@@ -9,6 +9,8 @@ namespace vs_commitizen.vs.Settings
     public interface IUserSettings
     {
         int MaxLineLength { get; set; }
+
+        string ConfigFilePath { get; set; }
     }
 
     public class UserSettings : SettingsManagerBase, IUserSettings
@@ -21,6 +23,18 @@ namespace vs_commitizen.vs.Settings
 
         public UserSettings(IServiceProvider serviceProvider) : base(serviceProvider)
         {
+        }
+
+        public string ConfigFilePath
+        {
+            get
+            {
+                return ReadString(SettingsRoot, nameof(this.ConfigFilePath));
+            }
+            set
+            {
+                WriteString(SettingsRoot, nameof(this.ConfigFilePath), value);
+            }
         }
 
         [global::System.Configuration.DefaultSettingValueAttribute("80")]

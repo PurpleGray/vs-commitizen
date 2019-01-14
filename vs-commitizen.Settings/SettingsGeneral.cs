@@ -21,5 +21,14 @@ namespace vs_commitizen.vs.Settings
             get { return UserSettings.MaxLineLength; }
             set { UserSettings.MaxLineLength = value; }
         }
+
+        [DisplayName("Commitizen config file path")]
+        [Description("Path to commitizen config")]
+        [Category("Config")]
+        public string ConfigFilePath
+        {
+            get { return UserSettings.ConfigFilePath; }
+            set { UserSettings.ConfigFilePath = value; }
+        }
     }
 }
